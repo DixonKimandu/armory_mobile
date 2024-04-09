@@ -1,11 +1,17 @@
 import 'package:armory_mobile/pages/Barracks.dart';
-import 'package:armory_mobile/pages/CentralAmory.dart';
+import 'package:armory_mobile/pages/central-armory/ArmoryRecord.dart';
+import 'package:armory_mobile/pages/central-armory/CentralArmory.dart';
 import 'package:armory_mobile/pages/ForgotPassword.dart';
 import 'package:armory_mobile/pages/Home.dart';
 import 'package:armory_mobile/pages/Login.dart';
-import 'package:armory_mobile/pages/PoliceStationrequests.dart';
+import 'package:armory_mobile/pages/Menu.dart';
+import 'package:armory_mobile/pages/Profile.dart';
 import 'package:armory_mobile/pages/ResetPassword.dart';
+import 'package:armory_mobile/pages/Settings.dart';
 import 'package:armory_mobile/pages/Splash.dart';
+import 'package:armory_mobile/pages/police-station/DispatchRequest.dart';
+import 'package:armory_mobile/pages/police-station/PoliceStationRequests.dart';
+import 'package:armory_mobile/pages/police-station/RequestRecord.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -45,10 +51,16 @@ class MyApp extends StatelessWidget {
         '/login': (_) => const Login(),
         '/home': (_) => const Home(),
         '/barracks': (_) => const Barracks(),
-        '/central-armory': (_) => const CentralAmory(),
+        '/central-armory': (_) => const CentralArmory(),
         '/police-station-requests': (_) => const PoliceStationRequests(),
         '/forgot-password': (_) => const ForgotPassword(),
         '/reset-password': (_) => const ResetPassword(),
+        '/settings': (_) => const Settings(),
+        '/profile': (_) => const Profile(),
+        '/menu': (_) => const Menu(),
+        '/request-record':(_) => const RequestRecord(),
+        '/dispatch-request': (_) => const DispatchRequest(),
+        '/armory-record': (_) => const AmoryRecord()
       },
     );
   }

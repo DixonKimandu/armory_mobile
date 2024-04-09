@@ -152,18 +152,31 @@ class _LoginFormState extends State<LoginForm> {
                   ),
                 ),
               ),
-              const SizedBox(height: 18),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * .03,
+              ),
               ElevatedButton(
                 onPressed: _isLoading ? null : _signIn,
                 style: ElevatedButton.styleFrom(
                   backgroundColor: const Color.fromARGB(255, 4, 141, 151)
                 ),
-                child: Text(
-                  style: const TextStyle(color: Colors.white),
-                  _isLoading ? 'Loading' : 'login ->'
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      style: const TextStyle(color: Colors.white),
+                      _isLoading ? 'Loading' : 'login'
+                    ),
+                    const Icon(
+                      Icons.arrow_right_alt,
+                      color: Colors.white,
+                    ),
+                  ],
                 ),
               ),
-              const SizedBox(height: 18),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * .03,
+              ),
               Center(
                 child: InkWell(
                   onTap: () {

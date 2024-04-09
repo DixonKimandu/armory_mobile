@@ -111,7 +111,9 @@ class _ForgotPasswordFormState extends State<ForgotPasswordForm> {
                   ),
                 ),
               ),
-              const SizedBox(height: 18),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * .03,
+              ),
               TextFormField(
                 controller: _emailController,
                 decoration: const InputDecoration(
@@ -119,7 +121,9 @@ class _ForgotPasswordFormState extends State<ForgotPasswordForm> {
                   border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(30)))
                 ),
               ),
-              const SizedBox(height: 18),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * .03,
+              ),
               ElevatedButton(
                 onPressed: _isLoading ? null : _sendLink,
                 style: ElevatedButton.styleFrom(
@@ -130,7 +134,9 @@ class _ForgotPasswordFormState extends State<ForgotPasswordForm> {
                   _isLoading ? 'Loading' : 'send link ->'
                 ),
               ),
-              const SizedBox(height: 18),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * .03,
+              ),
               Center(
                 child: InkWell(
                   onTap: () {

@@ -37,7 +37,9 @@ class _HomeState extends State<Home> {
                 ),
               ),
               InkWell(
-                onTap: () {},
+                onTap: () {
+                  Navigator.of(context).pushReplacementNamed('/menu');
+                },
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: SvgPicture.asset(
@@ -55,9 +57,13 @@ class _HomeState extends State<Home> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           // First row with two cards
-          const SizedBox(height: 20),
+          SizedBox(
+            height: MediaQuery.of(context).size.height * .02,
+          ),
           const BreadCrumb(link: '/home', title: 'Dashboard'),
-          const SizedBox(height: 20),
+          SizedBox(
+            height: MediaQuery.of(context).size.height * .02,
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -81,56 +87,69 @@ class _HomeState extends State<Home> {
             child: Padding(
               padding: const EdgeInsets.all(12.0),
               child: Card(
-                surfaceTintColor: Color.fromARGB(255, 193, 197, 197),
+                surfaceTintColor: const Color.fromARGB(255, 193, 197, 197),
                 elevation: 4,
-                child: Column(
-                  children: [
-                    const Text(
-                      'Incoming Fire Arms',
-                      style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 16,
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    children: [
+                      const Text(
+                        'Incoming Fire Arms',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w600,
+                          fontSize: 16,
+                        ),
                       ),
-                    ),
-                    DataTable(
-                      columns: const [
-                        DataColumn(label: Text('#')),
-                        DataColumn(label: Text(
-                          'Country',
-                          style: TextStyle(
-                            fontSize: 12,
-                          ),
-                        )),
-                        DataColumn(label: Text(
-                          'Delivery date',
-                          style: TextStyle(
-                            fontSize: 12,
-                          ),
-                        )),
-                        DataColumn(label: Text(
-                          'Action',
-                          style: TextStyle(
-                            fontSize: 12,
-                          ),
-                        )),
-                      ],
-                      rows: const[
-                        DataRow(cells: [
-                          DataCell(Icon(Icons.fire_truck)),
-                          DataCell(Text('USA')),
-                          DataCell(Text('13-04-2024')),
-                          DataCell(Icon(Icons.remove_red_eye)),
-                        ]),
-                        DataRow(cells: [
-                          DataCell(Icon(Icons.fire_truck)),
-                          DataCell(Text('Uganda')),
-                          DataCell(Text('18-07-2024')),
-                          DataCell(Icon(Icons.remove_red_eye)),
-                        ]),
-                        // Add more rows as needed
-                      ],
-                    ),
-                  ],
+                      DataTable(
+                        columns: const [
+                          DataColumn(label: Text('#')),
+                          DataColumn(label: Text(
+                            'Country',
+                            style: TextStyle(
+                              fontSize: 12,
+                            ),
+                          )),
+                          DataColumn(label: Text(
+                            'Delivery date',
+                            style: TextStyle(
+                              fontSize: 12,
+                            ),
+                          )),
+                          DataColumn(label: Text(
+                            'Action',
+                            style: TextStyle(
+                              fontSize: 12,
+                            ),
+                          )),
+                        ],
+                        rows: [
+                          DataRow(cells: [
+                            const DataCell(Icon(Icons.fire_truck)),
+                            const DataCell(Text('USA')),
+                            const DataCell(Text('13-04-2024')),
+                            DataCell(IconButton(onPressed: () {
+                              Navigator.pushNamed(context, '/central-armory');
+                            }, icon: const Icon(
+                              Icons.remove_red_eye,
+                              color: Colors.grey,
+                              ))),
+                          ]),
+                          DataRow(cells: [
+                            const DataCell(Icon(Icons.fire_truck)),
+                            const DataCell(Text('Uganda')),
+                            const DataCell(Text('18-07-2024')),
+                            DataCell(IconButton(onPressed: () {
+                              Navigator.pushNamed(context, '/central-armory');
+                            }, icon: const Icon(
+                              Icons.remove_red_eye,
+                              color: Colors.grey,
+                              ))),
+                          ]),
+                          // Add more rows as needed
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -165,7 +184,9 @@ class DashboardCard extends StatelessWidget {
                 fontSize: 16,
               ),
             ),
-            const SizedBox(height: 8),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * .02,
+            ),
             Row(
               children: [
                 Text(
@@ -175,7 +196,9 @@ class DashboardCard extends StatelessWidget {
                     fontWeight: FontWeight.w800,
                   ),
                 ),
-                const SizedBox(width: 60),
+                SizedBox(
+                  width: MediaQuery.of(context).size.width * .06,
+                ),
                 InkWell(
                   onTap: () {
                     Navigator.of(context).pushReplacementNamed(link);

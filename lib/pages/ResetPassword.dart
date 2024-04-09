@@ -117,7 +117,9 @@ class _ResetPasswordFormState extends State<ResetPasswordForm> {
                   ),
                 ),
               ),
-              const SizedBox(height: 18),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * .03,
+              ),
               TextFormField(
                 obscureText: passwordVisibility,
                 controller: _passwordController,
@@ -148,7 +150,9 @@ class _ResetPasswordFormState extends State<ResetPasswordForm> {
                   ),
                 ),
               ),
-              const SizedBox(height: 18),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * .03,
+              ),
               TextFormField(
                 obscureText: confirmPasswordVisibility,
                 controller: _passwordController,
@@ -179,7 +183,9 @@ class _ResetPasswordFormState extends State<ResetPasswordForm> {
                   ),
                 ),
               ),
-              const SizedBox(height: 18),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * .03,
+              ),
               ElevatedButton(
                 onPressed: _isLoading ? null : _reset,
                 style: ElevatedButton.styleFrom(
@@ -190,7 +196,9 @@ class _ResetPasswordFormState extends State<ResetPasswordForm> {
                   _isLoading ? 'Loading' : 'reset ->'
                 ),
               ),
-              const SizedBox(height: 18),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * .03,
+              ),
             ],
           ),
         ),
